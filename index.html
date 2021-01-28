@@ -44,6 +44,19 @@
                         Non hai nessun ToDo
                     </h4>
                 </div>
+
+                <div class="todo-list">
+                    <ul v-if="todosDeleted.length > 0">
+                        <li v-for="(todo,index) in todosDeleted">
+                            {{ todo }}
+                            <i class="fas fa-times"></i>
+                            <i class="fas fa-trash-restore" @click="restoreTodo(index)"></i>
+                        </li>
+                    </ul>
+                    <h4 v-else>
+                        Il tuo cestino &egrave; vuoto
+                    </h4>
+                </div>
                 
             </main>
 
