@@ -2,9 +2,20 @@ var todoList = new Vue({
     el: '#todo',
     data: {
         todos: [
-            'cane',
-            'prova2',
-            'prova3?'
+            'Fare la lista',
+            'Fare un\'abbondante colazione',
+            'Registrare videocassetta per Maggie',
+            'Discorso da uomo a uomo con Bart',
+            'Ascoltare Lisa suonare il sax',
+            'Fare i preparativi per il funerale',
+            'Fare pace con papà',
+            'Birra con i ragazzi al bar',
+            'Mandare al diavolo il capo',
+            'Andare in deltaplano',
+            'Piantare un albero',
+            'Fare l\'ultima cena con la mia adorata famiglia',
+            'Farsi un\'ultima intimata con Marge',
+            '...ammirare l\'alba (suggerito da Marge)'
         ],
         todosDeleted: [],
         addTodo: ''
@@ -27,6 +38,9 @@ var todoList = new Vue({
         },
         fullDeleteTrash(){
             this.todosDeleted.splice(0);
+        },
+        deleteMyTodo(){
+            this.todos.splice(0);
         }
     }
 });
