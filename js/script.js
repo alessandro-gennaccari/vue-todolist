@@ -60,7 +60,7 @@ var todoList = new Vue({
         },
         // modificare un todo 
         modifyTodo(index){
-            this.todos.splice(index,1 - 1);
+            this.todos.splice(index,0);
             this.todos[index] = prompt('Modifica la tua todo');
         }
     }
