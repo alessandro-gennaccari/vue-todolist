@@ -27,7 +27,7 @@ h4 {
 div.container {
     max-width: 1200px;
     margin: auto;
-    padding: 15px 50px 0;
+    padding: 5px 50px 0;
 }
 
 header {
@@ -75,7 +75,7 @@ main .todo-list {
     margin: auto;
     width: 90%;
     background-color: #fffffd;
-    padding: 50px 40px 20px;
+    padding: 55px 40px 20px;
     border-radius: 20px;
     position: relative;
     margin-bottom: 35px;
@@ -87,7 +87,7 @@ main .decoration {
     top: 0;
     left: 0;
     background: linear-gradient(#ffdd5b, #ffcd08);
-    height: 30px;
+    height: 35px;
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -97,7 +97,7 @@ main .decoration {
 main .decoration i {
     cursor: pointer;
     float: right;
-    margin-top: 7px;
+    margin-top: 10px;
     color: #000000c0;
     margin-left: 10px;
 }
@@ -111,7 +111,7 @@ main .border{
     width: 100%;
     border-bottom: 3px dotted #c7c7c7;
     position: absolute;
-    top: 32px;
+    top: 36px;
     left: 0;
 }
 

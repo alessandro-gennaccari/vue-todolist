@@ -60,9 +60,9 @@ var todoList = new Vue({
         },
         // modificare un todo 
         modifyTodo(index){
-            this.todos[index] = prompt('Modifica il testo');
+            this.todos.splice(index,1 - 1);
+            this.todos[index] = prompt('Modifica la tua todo');
         }
-        // Ho un problema, si modifica, ma il testo si aggiorna solo se succede un'azione, come digitare nell'input 
     }
 });
 
