@@ -131,6 +131,10 @@ main .todo-list ul li i {
     float: right;
 }
 
+main .todo-list ul li i.restore {
+    margin-right: 10px;
+}
+
 main .todo-list ul li i:hover,
 main .decoration i:hover {
     color: red;
