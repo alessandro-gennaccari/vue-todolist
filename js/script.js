@@ -10,8 +10,12 @@ var todoList = new Vue({
     },
     methods: {
         deleteTodo(index){
-            this.todosDeleted.push(this.todos[index])
+            this.todosDeleted.push(this.todos[index]);
             this.todos.splice(index,1);
+        },
+        restoreTodo(index){
+            this.todos.push(this.todosDeleted[index])
+            this.todosDeleted.splice(index,1);
         }
     }
 });
