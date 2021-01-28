@@ -5,11 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
+    <div class="container">
+
+        <div id="todo">
+
+            <header>
+        
+                <div class="logo">
+                    <h1>
+                        ToDo List
+                    </h1>
+                </div>
+        
+                <div>
+                    <input type="text" placeholder="Add New ToDo">
+                    <button>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+        
+            </header>
+        
+            <main>
+                
+                <div class="todo-list">
+                    <ul v-if="todos.length > 0">
+                        <li v-for="(todo,index) in todos">
+                            {{ todo }}
+                            <i class="fas fa-times" @click="deleteTodo(index)"></i>
+                        </li>
+                    </ul>
+                    <h4 v-else>
+                        Non hai nessun ToDo
+                    </h4>
+                </div>
+                
+            </main>
+
+        </div>
+
+    </div>
+
     <script src="js/script.js"></script>
 </body>
-</html>l
+</html>

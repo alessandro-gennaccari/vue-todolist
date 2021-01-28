@@ -4,3 +4,64 @@
     box-sizing: border-box;
 }
 
+div.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 50px;
+}
+
+header {
+    text-align: center;
+}
+
+header input,
+header button {
+    width: 300px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid grey;
+}
+
+header button {
+    cursor: pointer;
+    width: auto;
+    background-color: black;
+    border: none;
+}
+
+header button i {
+    color: white;
+}
+
+header button:hover {
+    background-color: rgb(105, 105, 105);
+}
+
+main .todo-list {
+    margin: auto;
+    width: 80%;
+    background-color: rgba(168, 168, 168, 0.685);
+    padding: 20px 40px;
+    border-radius: 20px;
+}
+
+main .todo-list ul {
+    list-style: none;
+}
+
+main .todo-list ul li {
+    padding: 8px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.473);
+}
+
+main .todo-list ul li:hover {
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main .todo-list ul li i {   
+    float: right;
+}
+
