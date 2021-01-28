@@ -41,13 +41,14 @@
                 
                 <div class="todo-list">
                     <div class="decoration">
-                        <i class="fas fa-trash"  @click="deleteMyTodo"  title="Elimina la lista"></i>
+                        <i class="fas fa-trash-alt"  @click="deleteMyTodo"  title="Sposta tutto nel Cestino"></i>
                     </div>
                     <div class="border"></div>
                     <ul v-if="todos.length > 0">
                         <li v-for="(todo,index) in todos">
                             {{ todo }}
                             <i class="fas fa-times" @click="deleteTodo(index)" title="Cancella"></i>
+                            <i class="fas fa-pencil-alt pen" @click="modifyTodo(index)" title="Modifica"></i>
                         </li>
                     </ul>
                     <h4 v-else>
@@ -59,7 +60,8 @@
 
                 <div class="todo-list">
                     <div class="decoration">
-                        <i class="fas fa-trash" @click="fullDeleteTrash" title="Elimina la lista"></i>
+                        <i class="fas fa-trash-alt" @click="fullDeleteTrash" title="Elimina tutto Definitivamente"></i>
+                        <i class="fas fa-window-restore restore-all" @click="restoreAllTodo" title="Ripristina tutto"></i>
                     </div>
                     <div class="border"></div>
                     <ul v-if="todosDeleted.length > 0">

@@ -21,26 +21,48 @@ var todoList = new Vue({
         addTodo: ''
     },
     methods: {
+        // Cancella un todo
         deleteTodo(index){
             this.todosDeleted.push(this.todos[index]);
             this.todos.splice(index,1);
         },
+        // Ripristina un todo
         restoreTodo(index){
             this.todos.push(this.todosDeleted[index]);
             this.todosDeleted.splice(index,1);
         },
+        // Aggiunge il todo
         addTodos(){
             (this.addTodo.length < 3) ? alert('Inserisci almeno 3') : this.todos.push(this.addTodo);
             this.addTodo = '';
         },
+        // Cancella completamente il todo dal cestino
         permanentDelete(index){
             this.todosDeleted.splice(index,1);
         },
+        // Cancella tuti i todo dal cestino
         fullDeleteTrash(){
             this.todosDeleted.splice(0);
         },
+        // Sposta tutti i todo nel cestino
         deleteMyTodo(){
+            for (let i = 0; i < this.todos.length; i++){
+                this.todosDeleted.push(this.todos[i]);
+            }
             this.todos.splice(0);
+        },
+        // Ripristina tutte le voci dal cestino
+        restoreAllTodo(){
+            for (let i = 0; i < this.todosDeleted.length; i++){
+                this.todos.push(this.todosDeleted[i]);
+            }
+            this.todosDeleted.splice(0);
+        },
+        // modificare un todo 
+        modifyTodo(index){
+            this.todos[index] = prompt('Modifica il testo');
         }
+        // Ho un problema, si modifica, ma il testo si aggiorna solo se succede un'azione, come digitare nell'input 
     }
 });
+
