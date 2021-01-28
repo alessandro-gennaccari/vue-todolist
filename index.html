@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -23,8 +25,8 @@
                 </div>
         
                 <div>
-                    <input type="text" placeholder="Add New ToDo">
-                    <button>
+                    <input type="text" placeholder="Add New ToDo" v-model="addTodo">
+                    <button  @click="addTodos">
                         <i class="fas fa-plus"></i>
                     </button>
                 </div>
@@ -34,23 +36,31 @@
             <main>
                 
                 <div class="todo-list">
+                    <div class="decoration">
+                        <i class="fas fa-trash"></i>
+                    </div>
                     <ul v-if="todos.length > 0">
                         <li v-for="(todo,index) in todos">
                             {{ todo }}
-                            <i class="fas fa-times" @click="deleteTodo(index)"></i>
+                            <i class="fas fa-times" @click="deleteTodo(index)" title="Cancella"></i>
                         </li>
                     </ul>
                     <h4 v-else>
-                        Non hai nessun ToDo
+                        La tua lista &egrave; vuota
                     </h4>
                 </div>
 
+                <h3>Il tuo Cestino</h3>
+
                 <div class="todo-list">
+                    <div class="decoration">
+                        <i class="fas fa-trash" @click="fullDeleteTrash()"></i>
+                    </div>
                     <ul v-if="todosDeleted.length > 0">
                         <li v-for="(todo,index) in todosDeleted">
                             {{ todo }}
-                            <i class="fas fa-times"></i>
-                            <i class="fas fa-trash-restore" @click="restoreTodo(index)"></i>
+                            <i class="fas fa-times" title="Cancella Definitivamente" @click="permanentDelete(index)"></i>
+                            <i class="fas fa-trash-restore" @click="restoreTodo(index)" title="Ripristina Voce"></i>
                         </li>
                     </ul>
                     <h4 v-else>

@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #0000001f;
+}
+h4 {
+    text-align: center;
 }
 
 div.container {
@@ -14,18 +22,23 @@ header {
     text-align: center;
 }
 
+header .logo {
+    margin-bottom: 20px;
+}
+
 header input,
 header button {
     width: 300px;
     padding: 10px 20px;
     border-radius: 10px;
     outline: none;
-    border: 1px solid #546e7a;
+    border: 1px solid white;
 }
 
 header input {
-    background:url('https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/32x32/keyboard_key_enter.png') 98% 50% no-repeat;
+    background: url('https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/32x32/keyboard_key_enter.png') 98% 50% no-repeat;
     background-size: 27px;
+    background-color: white;
 }
 
 header button {
@@ -43,12 +56,37 @@ header button:hover {
     background-color: rgb(105, 105, 105);
 }
 
+main {
+    margin-top: 40px;
+}
+
 main .todo-list {
     margin: auto;
-    width: 80%;
-    background-color: rgba(168, 168, 168, 0.685);
-    padding: 20px 40px;
+    width: 90%;
+    background-color: #fffffd;
+    padding: 50px 40px 20px;
     border-radius: 20px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+main .decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#ffdd5b, #ffcd08);
+    height: 30px;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 0 46px;
+}
+
+main .decoration i {
+    cursor: pointer;
+    float: right;
+    margin-top: 7px;
+    color: #000000c0;
 }
 
 main .todo-list ul {
@@ -57,16 +95,18 @@ main .todo-list ul {
 
 main .todo-list ul li {
     padding: 8px;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.473);
+    border-bottom: 1px solid #c9c9c9;
 }
 
 main .todo-list ul li:hover {
-    background-color: white;
+    background-color: rgba(226, 226, 226, 0.705);
     border-radius: 5px;
     cursor: pointer;
 }
 
 main .todo-list ul li i {
-    margin-left: 10px;
+    color: #000000c0;
+    font-size: 18px;
+    margin-left: 14px;
     float: right;
 }
