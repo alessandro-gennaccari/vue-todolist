@@ -37,7 +37,7 @@
         
             <main>
 
-                <h3>La tua Lista</h3>
+                <!-- <h3>La tua Lista</h3> -->
                 
                 <div class="todo-list">
                     <div class="decoration">
@@ -47,7 +47,7 @@
                     <ul v-if="todos.length > 0">
                         <li v-for="(todo,index) in todos">
                             {{ todo }}
-                            <i class="fas fa-times" @click="deleteTodo(index)" title="Cancella"></i>
+                            <i class="fas fa-times delete" @click="deleteTodo(index)" title="Cancella"></i>
                             <i class="fas fa-pencil-alt pen" @click="modifyTodo(index)" title="Modifica"></i>
                         </li>
                     </ul>
@@ -56,7 +56,7 @@
                     </h4>
                 </div>
 
-                <h3>Il tuo Cestino</h3>
+                <h3>Cestino</h3>
 
                 <div class="todo-list">
                     <div class="decoration">
@@ -67,7 +67,7 @@
                     <ul v-if="todosDeleted.length > 0">
                         <li v-for="(todo,index) in todosDeleted">
                             {{ todo }}
-                            <i class="fas fa-times" title="Cancella Definitivamente" @click="permanentDelete(index)"></i>
+                            <i class="fas fa-times delete" title="Cancella Definitivamente" @click="permanentDelete(index)"></i>
                             <i class="fas fa-trash-restore restore" @click="restoreTodo(index)" title="Ripristina Voce"></i>
                         </li>
                     </ul>
