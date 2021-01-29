@@ -18,7 +18,8 @@ var todoList = new Vue({
             '...ammirare l\'alba (suggerito da Marge)'
         ],
         todosDeleted: [],
-        addTodo: ''
+        addTodo: '',
+        modify: ''
     },
     methods: {
         // Cancella un todo
@@ -58,10 +59,12 @@ var todoList = new Vue({
             }
             this.todosDeleted.splice(0);
         },
-        // modificare un todo 
+        // modificare un todo con controllo per impedire un campo vuoto
         modifyTodo(index){
             this.todos.splice(index,0);
-            this.todos[index] = prompt('Modifica la tua todo');
+            this.modify = prompt('Modifica la tua todo');
+            console.log(this.modify);
+            (this.modify == '' || this.modify == null) ? this.modify = this.todos[index] : this.todos[index] = this.modify;
         }
     }
 });
